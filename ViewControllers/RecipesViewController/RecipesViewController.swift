@@ -58,15 +58,12 @@ class RecipesViewController: UIViewController {
 
         tableView.reloadData()
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
 extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe: Recipe
         if isFiltering(){
@@ -75,7 +72,7 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
             recipe = recipes[indexPath.row]
         }
         
-        let detailedRecipeVC = DetailedRecipeViewController()
+        let detailedRecipeVC = DetailedRecipeViewController(recipe)
         self.show(detailedRecipeVC, sender: true)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,8 +86,6 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return recipes.count
     }
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: RecipeCategoryTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "RecipeCategoryTableViewCell", for: indexPath) as? RecipeCategoryTableViewCell)!

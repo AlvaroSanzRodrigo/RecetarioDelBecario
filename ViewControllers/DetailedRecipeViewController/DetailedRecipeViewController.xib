@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailedRecipeViewController" customModule="RecetarioDelBecario" customModuleProvider="target">
             <connections>
+                <outlet property="howToTextView" destination="IIe-JR-j5v" id="DOC-Au-L0P"/>
+                <outlet property="imageImageView" destination="kGH-Rb-lKy" id="ZsZ-uU-a79"/>
+                <outlet property="tableView" destination="dA3-im-PGV" id="D17-gn-hEl"/>
+                <outlet property="titleLabel" destination="vvn-HH-Y2R" id="aJh-lf-bF8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,13 +42,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dA3-im-PGV">
-                    <rect key="frame" x="0.0" y="325" width="375" height="128"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="128" id="iWe-jp-oha"/>
-                    </constraints>
-                </tableView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IIe-JR-j5v">
                     <rect key="frame" x="0.0" y="549" width="375" height="229"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,9 +52,22 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kGH-Rb-lKy">
                     <rect key="frame" x="67" y="102" width="240" height="128"/>
                     <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="GdK-ON-ODb"/>
                         <constraint firstAttribute="height" constant="128" id="POj-tf-MDA"/>
+                        <constraint firstAttribute="width" constant="240" id="nH6-Gi-5Ml"/>
                     </constraints>
                 </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dA3-im-PGV">
+                    <rect key="frame" x="0.0" y="325" width="375" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="iWe-jp-oha"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="SG8-Ba-cmw"/>
+                        <outlet property="delegate" destination="-1" id="aCq-NF-QVR"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

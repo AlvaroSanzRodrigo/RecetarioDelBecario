@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class HomeViewController: UIViewController {
     
@@ -35,11 +37,11 @@ class HomeViewController: UIViewController {
     }
     
     private func populateRecipes(){
-        let recipeSandwich1 = Recipe(name: "Ham and cheese sandwich", imageUrl: "holi", description: "classic sandwich", ingredients: ["ham", "tranchetes", "sandwich bread"], howTo: "Put a slice of ham on a slice of bread, then add a slice of cheese and then add another slice of bread", location: [Double(10), Double(10)], dificulty: 5)
-        let recipeSandwich2 = Recipe(name: "Just cheese sandwich", imageUrl: "holi", description: "classic sandwich", ingredients: ["ham", "sandwich bread"], howTo: "Put a slice of cheese on a slice of bread, then add slice of bread", location: [Double(10), Double(10)], dificulty: 3)
-        let recipeSandwich3 = Recipe(name: "Just ham sandwich", imageUrl: "holi", description: "classic sandwich", ingredients: ["ham", "tranchetes", "sandwich bread"], howTo: "Put a slice of ham on a slice of bread, then add another slice of bread", location: [Double(10), Double(10)], dificulty: 3)
+        let recipeSandwich1 = Recipe(name: "Ham and cheese sandwich", imageUrl: "https://www.divinacocina.es/wp-content/uploads/sandwich-blt.jpg", description: "classic sandwich", ingredients: ["ham", "tranchetes", "sandwich bread"], howTo: "Put a slice of ham on a slice of bread, then add a slice of cheese and then add another slice of bread", location: [Double(10), Double(10)], dificulty: 5)
+        let recipeSandwich2 = Recipe(name: "Just cheese sandwich", imageUrl: "https://www.divinacocina.es/wp-content/uploads/sandwich-blt.jpg", description: "classic sandwich", ingredients: ["ham", "sandwich bread"], howTo: "Put a slice of cheese on a slice of bread, then add slice of bread", location: [Double(10), Double(10)], dificulty: 3)
+        let recipeSandwich3 = Recipe(name: "Just ham sandwich", imageUrl: "https://www.divinacocina.es/wp-content/uploads/sandwich-blt.jpg", description: "classic sandwich", ingredients: ["ham", "tranchetes", "sandwich bread"], howTo: "Put a slice of ham on a slice of bread, then add another slice of bread", location: [Double(10), Double(10)], dificulty: 3)
         
-        let categorySandwich = RecipeCategory(name: "Sandwiches", imageUrl: "holi", description: "The goold old one", recipes: [recipeSandwich1, recipeSandwich2, recipeSandwich3])
+        let categorySandwich = RecipeCategory(name: "Sandwiches", imageUrl: "https://www.divinacocina.es/wp-content/uploads/sandwich-blt.jpg", description: "The goold old one", recipes: [recipeSandwich1, recipeSandwich2, recipeSandwich3])
         
         categoriesArray.append(categorySandwich)
     }
@@ -71,6 +73,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let recipeCategory = categoriesArray[indexPath.row]
         cell.titleLabel.text = recipeCategory.name
         cell.descriptionLabel.text = recipeCategory.description
+        cell.imageImageView.sd_setImage(with: URL(string: recipeCategory.imageUrl), completed: nil)
         return cell
     }
 }

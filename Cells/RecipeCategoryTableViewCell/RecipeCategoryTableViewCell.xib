@@ -22,8 +22,10 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJE-kZ-ToY">
                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Hvw-kn-B0t"/>
                             <constraint firstAttribute="height" constant="44" id="J9u-8g-h5C"/>
                             <constraint firstAttribute="width" constant="44" id="elf-xM-86f"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="wEL-7c-Ten"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLX-xu-g9J">
