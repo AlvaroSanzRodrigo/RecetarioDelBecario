@@ -67,8 +67,16 @@ class RecipesViewController: UIViewController {
 extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
     
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipe: Recipe
+        if isFiltering(){
+            recipe = filteredRecipes[indexPath.row]
+        }else{
+            recipe = recipes[indexPath.row]
+        }
         
+        let detailedRecipeVC = DetailedRecipeViewController()
+        self.show(detailedRecipeVC, sender: true)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Na7-If-ctr">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="1HB-GE-8EN"/>
@@ -32,13 +32,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Na7-If-ctr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="A2U-bU-oVH"/>
-                <constraint firstItem="Na7-If-ctr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FII-mI-IyL"/>
-                <constraint firstItem="Na7-If-ctr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="f0K-BL-LY4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Na7-If-ctr" secondAttribute="bottom" id="z4T-Iu-Af7"/>
+                <constraint firstItem="Na7-If-ctr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="O6g-RV-yAn"/>
+                <constraint firstItem="Na7-If-ctr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xdd-G7-Icu"/>
+                <constraint firstAttribute="bottom" secondItem="Na7-If-ctr" secondAttribute="bottom" id="Zvz-ch-gX7"/>
+                <constraint firstItem="Na7-If-ctr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="q1E-SH-AIG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="25.5" y="51.5"/>
+            <point key="canvasLocation" x="25.5" y="51"/>
         </view>
     </objects>
 </document>
