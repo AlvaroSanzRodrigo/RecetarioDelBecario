@@ -10,8 +10,8 @@ import UIKit
 
 class RecipesViewController: UIViewController {
     
-    var recipes:[Recipe]!
-    var filteredRecipes:[Recipe]?
+    var recipes:[Recipe] = []
+    var filteredRecipes:[Recipe] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -51,6 +51,7 @@ class RecipesViewController: UIViewController {
     }
     
     internal func filterContentForSearch(_ searchText: String){
+        
             filteredRecipes = recipes.filter({ (recipe: Recipe) -> Bool in
                 return recipe.name.lowercased().contains(searchText.lowercased()) || recipe.description.lowercased().contains(searchText.lowercased())
             })
@@ -75,6 +76,9 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering(){
+            return filteredRecipes.count
+        }
         return recipes.count
     }
     
@@ -84,7 +88,7 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
         let cell: RecipeCategoryTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "RecipeCategoryTableViewCell", for: indexPath) as? RecipeCategoryTableViewCell)!
         
         if isFiltering() {
-            let recipe = filteredRecipes![indexPath.row]
+            let recipe = filteredRecipes[indexPath.row]
             cell.titleLabel.text = recipe.name
             cell.descriptionLabel.text = "Difulty: \(recipe.dificulty!)"
         }else{
@@ -92,7 +96,6 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
             cell.titleLabel.text = recipe.name
             cell.descriptionLabel.text = "Difulty: \(recipe.dificulty!)"
         }
-        
         return cell
     }
 }
