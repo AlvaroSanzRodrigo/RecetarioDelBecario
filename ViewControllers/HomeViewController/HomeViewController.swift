@@ -43,6 +43,8 @@ class HomeViewController: UIViewController {
         
         let categorySandwich = RecipeCategory(name: "Sandwiches", imageUrl: "https://www.divinacocina.es/wp-content/uploads/sandwich-blt.jpg", description: "The goold old one", recipes: [recipeSandwich1, recipeSandwich2, recipeSandwich3])
         
+        let recipeRaviolis = Recipe(name: "Raviolis", imageUrl: <#T##String#>, description: "Delicius italian pasta", ingredients: ["raviolis", "water", "perejil"], howTo: "Just boil the water add raviolis and perejil", location: [Double(10), Double(10)], dificulty: 4)
+        
         categoriesArray.append(categorySandwich)
     }
     

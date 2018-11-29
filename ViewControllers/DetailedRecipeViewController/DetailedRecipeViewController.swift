@@ -23,13 +23,27 @@ class DetailedRecipeViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = recipe.name
         howToTextView.text = recipe.howTo
+        imageImageView.sd_setImage(with: URL(string: recipe.imageUrl), completed: nil)
         registerCells()
+        setupBarButtonsItems()
     }
     
     private func registerCells(){
         let identifier = "RecipeTableViewCell"
         let cellNib = UINib(nibName: identifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: identifier)
+    }
+    
+    private func setupBarButtonsItems(){
+        let mapBarButton = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(openMap))
+        navigationItem.setRightBarButton(mapBarButton, animated: false)
+    }
+    
+    @objc private func openMap(){
+        let lat = recipe.location[0]
+        let lng = recipe.location[1]
+        let mapVC = MapViewController(lat: lat, lng: lng)
+        navigationController?.pushViewController(mapVC, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

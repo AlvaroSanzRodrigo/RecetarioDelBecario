@@ -94,10 +94,13 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
             let recipe = filteredRecipes[indexPath.row]
             cell.titleLabel.text = recipe.name
             cell.descriptionLabel.text = "Difulty: \(recipe.dificulty!)"
+            cell.imageImageView.sd_setImage(with: URL(string: recipe.imageUrl), completed: nil)
         }else{
             let recipe = recipes[indexPath.row]
             cell.titleLabel.text = recipe.name
             cell.descriptionLabel.text = "Difulty: \(recipe.dificulty!)"
+            cell.imageImageView.sd_setImage(with: URL(string: recipe.imageUrl), completed: nil)
+
         }
         return cell
     }
